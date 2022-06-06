@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.*;
 
@@ -38,6 +39,11 @@ public class CashDispenserTest {
     public void tooMuchCashAvailabilityTest(){
         boolean bool = cashDispenser.isSufficientCashAvailable(10000000);
         assertFalse("Too much cash",bool);
+    }
+    @Test
+    public void cashAvailabilityTest(){
+        boolean bool = cashDispenser.isSufficientCashAvailable(10);
+        assertTrue("Available cash",bool);
     }
     
 }
